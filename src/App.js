@@ -6,18 +6,26 @@ import {
   Link
 } from "react-router-dom";
 
-import './app.scss';
+import './App.scss';
+
+import {Home, About} from "./pages"
+import {Nav, Footer} from "./components"
 
 
-function App() {
+const App = () => {
   return (
-      <Router>
+    <Router>
       <div className="App">
+        <Nav />
         <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route path="/">
-            <div>Hello</div>
+            <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
